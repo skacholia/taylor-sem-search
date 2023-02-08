@@ -41,13 +41,8 @@ def search_embed(df, description, n=3, pprint=True):
         for r in results:
             print(r[:200])
             print()
-    st.session_state.lyric = results
+    return results
 
-topic = st.text_input(label="Description", placeholder="Someone was being a hater today...")
-
-st.button(
-                label="Find a lyric",
-                type="secondary",
-                on_click=search_embed(df, topic, n=3),
-            )
+title = st.text_input('Description', "I've got so many haters")
+st.write(search_embed(df, title, n=3))
 
