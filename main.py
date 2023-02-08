@@ -25,6 +25,14 @@ def get_embedding(text, model="text-embedding-ada-002"):
    return openai.Embedding.create(input = [text], model=model)['data'][0]['embedding']
 
 def search_embed(df, description, n=3, pprint=True):
+    if not description:
+        st.write("Please enter a description.")
+        return
+    
+    if len(description) > 200:
+        st.write("Description must be 200 characters or less.")
+        return
+    
     description_embedding = get_embedding(
         description,
         model="text-embedding-ada-002"
@@ -39,9 +47,7 @@ def search_embed(df, description, n=3, pprint=True):
     )
     if pprint:
         for r in results:
-            print(r[:200])
-            print()
-    return results
+            st.write(r[:200])
 
 st.title("✨ There's a Taylor lyric for that ✨")
 st.markdown(
@@ -49,8 +55,8 @@ st.markdown(
 )
 
 description = st.text_area('Description', "I got so many haters!")
-st.button(label = "Find a lyric",
-       on_click = st.write(search_embed(lyrics, description, n=3)))
 
-st.image(img)
+if st.button(label = "Find a lyric"):
+    search_embed(lyrics, description, n=3)
 
+st.image(img, use_column_width=True)
