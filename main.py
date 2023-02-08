@@ -43,13 +43,13 @@ def search_embed(df, description, n=3, pprint=True):
             print()
     return results
 
- st.title("✨ There's a Taylor lyric for that ✨")
- st.markdown(
+st.title("✨ There's a Taylor lyric for that ✨")
+st.markdown(
  "Put in a description or phrase, and this app will find an applicable Taylor Swift lyric to match it."
- )
+)
 
- description = st.text_area('Description', "I got so many haters!")
- st.button(label = "Find a lyric",
+description = st.text_area('Description', "I got so many haters!")
+st.button(label = "Find a lyric",
        on_click = st.write(search_embed(lyrics, description, n=3)))
 
 st.image(img)
