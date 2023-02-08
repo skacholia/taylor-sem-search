@@ -45,7 +45,9 @@ def search_embed(df, description, n=3, pprint=True):
         for r in results:
             print(r[:200])
             print()
-    return results
+        
+    result_text = '\n\n'.join([f'**{r[:r.index(":")]}:** {r[r.index(":")+2:]}' for r in results])
+    return result_text
 
 st.title("✨ There's a Taylor lyric for that ✨")
 st.markdown(
