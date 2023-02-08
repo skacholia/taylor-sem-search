@@ -5,6 +5,7 @@ from openai.embeddings_utils import cosine_similarity
 import tiktoken
 import streamlit as st
 import streamlit.components.v1 as components
+import numpy as np
 
 st.title("Find an applicable Taylor Swift Lyric")
 st.markdown(
