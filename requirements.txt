@@ -4,5 +4,5 @@ matplotlib==3.6.3
 plotly
 plotly.express
 scipi
-sklearn
+scikit-learn
 tenacity
