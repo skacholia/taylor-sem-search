@@ -51,10 +51,15 @@ def search_embed(df, description, n=3, pprint=True):
 
 st.title("✨ There's a Taylor lyric for that ✨")
 st.markdown(
- "Put in a description or phrase, and this app will find an applicable Taylor Swift lyric to match it."
+ "Put in a description or phrase, and this app will find applicable Taylor Swift lyrics to match it."
+)
+st.markdown(
+ "For example: \n\"Melancholic romance\" → \"What a sad, beautiful, tragic love affair\"
+  \n\"I'm coding at the library and drinking a latte\" → \"Coffee at midnight\"
+ "
 )
 
-description = st.text_area('Description', "I got so many haters!")
+description = st.text_area('Description', "")
 
 if st.button(label = "Find a lyric"):
     try:
