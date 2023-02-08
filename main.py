@@ -12,7 +12,7 @@ st.markdown(
 
 df = pd.read_csv("tswift_embed.csv")
 
-openai.api_key = "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"
+openai.api_key = st.secrets["openaiKey"]
 embedding_encoding = "cl100k_base"  # this the encoding for text-embedding-ada-002
 
 encoding = tiktoken.get_encoding(embedding_encoding)
