@@ -41,7 +41,7 @@ def search_embed(df, description, n=3, pprint=True):
         for r in results:
             print(r[:200])
             print()
-    return results
+    return results.combined
 
 st.title("✨ There's a Taylor lyric for that ✨")
 st.markdown(
