@@ -8,8 +8,6 @@ import streamlit.components.v1 as components
 import numpy as np
 from PIL import Image
 
-col1, col2, col3 = st.columns(3)
-
 img = Image.open("taylor.png")
 
 lyrics = pd.read_csv("https://media.githubusercontent.com/media/skacholia/taylor-sem-search/main/tswift_embed.csv")
@@ -45,16 +43,15 @@ def search_embed(df, description, n=3, pprint=True):
             print()
     return results
 
-with col1:
     st.title("✨ There's a Taylor lyric for that ✨")
     st.markdown(
     "Put in a description or phrase, and this app will find an applicable Taylor Swift lyric to match it."
     )
-with col2:
+
     description = st.text_area('Description', "I got so many haters!")
     st.button(label = "Find a lyric",
           on_click = st.write(search_embed(lyrics, description, n=3)))
-with col3:
-    st.image(img)
+
+st.markdown(<p style='text-align: center; color: grey;'>"+img_to_html('taylor.png')+"</p>", unsafe_allow_html=True)
 
 
