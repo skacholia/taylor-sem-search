@@ -2,6 +2,7 @@ import pandas as pd
 import openai
 from openai.embeddings_utils import get_embedding
 from openai.embeddings_utils import cosine_similarity
+import tiktoken
 import streamlit as st
 import streamlit.components.v1 as components
 
