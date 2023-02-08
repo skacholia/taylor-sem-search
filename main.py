@@ -10,7 +10,7 @@ from PIL import Image
 
 img = Image.open("taylor.png")
 
-st.title("✨ There's a Taylor Swift lyric for that ✨")
+st.title("✨ There's a Taylor lyric for that ✨")
 st.markdown(
     "Put in a description or phrase, and this app will find an applicable Taylor Swift lyric to match it."
 )
