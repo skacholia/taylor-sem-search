@@ -1,6 +1,7 @@
-openai==0.22.0
-streamlit==1.11.0
-matplotlib==3.6.3
+openai
+streamlit
+matplotlib
+tiktoken
 plotly
 plotly.express
 scipi
