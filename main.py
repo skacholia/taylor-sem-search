@@ -48,7 +48,7 @@ def search_embed(df, description, n=3, pprint=True):
             print()
     return results
 
-description = st.text_input('Description', "Yeongseo is my friend")
+description = st.text_area('Description', "I got so many haters!")
 st.button(label = "Find a lyric",
           on_click = st.write(search_embed(lyrics, description, n=3)))
 st.image(img)
