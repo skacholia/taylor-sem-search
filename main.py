@@ -10,7 +10,7 @@ from PIL import Image
 
 img = Image.open("taylor.png")
 
-@st.cache
+@st.experimental_memo
 def read_lyric_csv():
    return pd.read_csv("https://media.githubusercontent.com/media/skacholia/taylor-sem-search/main/tswift_embed.csv")
 
