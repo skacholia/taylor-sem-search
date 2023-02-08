@@ -8,3 +8,4 @@ scipi
 numpy
 scikit-learn
 tenacity
+pillow
