@@ -12,6 +12,7 @@ st.markdown(
 )
 
 lyrics = pd.read_csv("tswift_embed.csv")
+st.write(lyrics.head())
 
 openai.api_key = st.secrets["openaiKey"]
 embedding_encoding = "cl100k_base"  # this the encoding for text-embedding-ada-002
