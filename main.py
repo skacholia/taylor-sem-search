@@ -10,9 +10,10 @@ from PIL import Image
 
 img = Image.open("taylor.png")
 
-@st.cache
 def read_lyric_csv():
-   lyrics = pd.read_csv("https://media.githubusercontent.com/media/skacholia/taylor-sem-search/main/tswift_embed.csv")
+   return pd.read_csv("https://media.githubusercontent.com/media/skacholia/taylor-sem-search/main/tswift_embed.csv")
+
+lyrics = read_lyric_csv();
 lyrics["ada_embedding"] = lyrics["ada_embedding"].apply(lambda x: np.fromstring(x.strip("[").strip("]"), sep=","))
 
 openai.api_key = st.secrets["openaiKey"]
