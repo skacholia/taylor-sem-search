@@ -11,7 +11,7 @@ st.markdown(
     "This app uses OpenAI's embeddings model to find the most relevant Taylor Swift lyric for any given description"
 )
 
-df = pd.read_csv("tswift_embed.csv")
+lyrics = pd.read_csv("tswift_embed.csv")
 
 openai.api_key = st.secrets["openaiKey"]
 embedding_encoding = "cl100k_base"  # this the encoding for text-embedding-ada-002
@@ -44,5 +44,5 @@ def search_embed(df, description, n=3, pprint=True):
     return results
 
 title = st.text_input('Description', "I've got so many haters")
-st.write(search_embed(df, title, n=3))
+st.write(search_embed(lyrics, title, n=3))
 
