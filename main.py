@@ -54,9 +54,7 @@ st.markdown(
  "Put in a description or phrase, and this app will find applicable Taylor Swift lyrics to match it."
 )
 st.markdown(
- "For example: \n\"Melancholic romance\" → \"What a sad, beautiful, tragic love affair\"
-  \n\"I'm coding at the library and drinking a latte\" → \"Coffee at midnight\"
- "
+ "For example: \n\"Melancholic romance\" → \"What a sad, beautiful, tragic love affair\" \n\"I'm coding at the library and drinking a latte\" → \"Coffee at midnight\""
 )
 
 description = st.text_area('Description', "")
