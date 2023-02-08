@@ -11,7 +11,7 @@ st.markdown(
     "This app uses OpenAI's embeddings model to find the most relevant Taylor Swift lyric for any given description"
 )
 
-lyrics = pd.read_csv("https://github.com/skacholia/taylor-sem-search/blob/main/tswift_embed.csv")
+lyrics = pd.read_csv("https://media.githubusercontent.com/media/skacholia/taylor-sem-search/main/tswift_embed.csv")
 st.write(lyrics.head())
 
 openai.api_key = st.secrets["openaiKey"]
