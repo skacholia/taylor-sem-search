@@ -6,16 +6,19 @@ import tiktoken
 import streamlit as st
 import streamlit.components.v1 as components
 import numpy as np
+import urllib.request
+from PIL import Image
 
-st.title("Find an applicable Taylor Swift Lyric")
+urllib.request.urlretrieve("https://en.wikipedia.org/wiki/Fearless_%28Taylor%27s_Version%29#/media/File:Fearless_(Taylor's_Version)_(2021_album_cover)_by_Taylor_Swift.png", “taylor.png”)
+img = Image.open(“taylor.png”)
+
+st.title("✨ There's a Taylor Swift lyric for that ✨")
 st.markdown(
-    "This app uses OpenAI's embeddings model to find the most relevant Taylor Swift lyric for any given description"
+    "Put in a description or phrase, and this app will find an applicable Taylor Swift lyric to match it."
 )
 
 lyrics = pd.read_csv("https://media.githubusercontent.com/media/skacholia/taylor-sem-search/main/tswift_embed.csv")
 lyrics["ada_embedding"] = lyrics["ada_embedding"].apply(lambda x: np.fromstring(x.strip("[").strip("]"), sep=","))
-
-st.write(lyrics.head())
 
 openai.api_key = st.secrets["openaiKey"]
 embedding_encoding = "cl100k_base"  # this the encoding for text-embedding-ada-002
@@ -47,6 +50,9 @@ def search_embed(df, description, n=3, pprint=True):
             print()
     return results
 
-title = st.text_input('Description', "I've got so many haters")
-st.write(search_embed(lyrics, title, n=3))
+description = st.text_input('Description', "I've got so many haters!")
+st.button(label = "Find a lyric",
+          on_click = st.write(search_embed(lyrics, description, n=3)))
+st.image(img)
+
 
