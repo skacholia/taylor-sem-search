@@ -12,7 +12,7 @@ st.markdown(
 )
 
 lyrics = pd.read_csv("https://media.githubusercontent.com/media/skacholia/taylor-sem-search/main/tswift_embed.csv")
-df["ada_embedding"] = df["ada_embedding"].apply(lambda x: np.fromstring(x.strip("[").strip("]"), sep=","))
+lyrics["ada_embedding"] = lyrics["ada_embedding"].apply(lambda x: np.fromstring(x.strip("[").strip("]"), sep=","))
 
 st.write(lyrics.head())
 
