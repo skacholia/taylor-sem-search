@@ -40,7 +40,7 @@ def search_embed(df, description, n=3, pprint=True):
         for r in results:
             print(r[:200])
             print()
-     st.session_state.lyric = results
+    st.session_state.lyric = results
 
 topic = st.text_input(label="Description", placeholder="Someone was being a hater today...")
 
