@@ -10,7 +10,7 @@ import urllib.request
 from PIL import Image
 
 urllib.request.urlretrieve("https://en.wikipedia.org/wiki/Fearless_%28Taylor%27s_Version%29#/media/File:Fearless_(Taylor's_Version)_(2021_album_cover)_by_Taylor_Swift.png", 'taylor.png')
-img = Image.open(“taylor.png”)
+img = Image.open('taylor.png')
 
 st.title("✨ There's a Taylor Swift lyric for that ✨")
 st.markdown(
@@ -50,7 +50,7 @@ def search_embed(df, description, n=3, pprint=True):
             print()
     return results
 
-description = st.text_input('Description', "I've got so many haters!")
+description = st.text_input('Description', "Yeongseo is my friend")
 st.button(label = "Find a lyric",
           on_click = st.write(search_embed(lyrics, description, n=3)))
 st.image(img)
