@@ -3,8 +3,8 @@
 This Streamlit app finds Taylor Swift lyrics that most belong with a particular phrase or word.
 
 ## How to Use
-Enter a description or phrase in the "Blank Space" provided.
-Click the "Find a lyric" button.
+Enter a description or phrase in the "Blank Space" provided.  
+Click the "Find a lyric" button.  
 Voila! The app will display the top three Taylor Swift lyrics that best match your description or phrase. 🤗. 
 
 ## Examples
