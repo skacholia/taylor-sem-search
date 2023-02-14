@@ -14,5 +14,5 @@ Voila! The app will display the top three Taylor Swift lyrics that best match yo
 ## Technologies Used
 Python  
 Pandas  
-OpenAI API (text-embedding-ada-002). 
+OpenAI API (text-embedding-ada-002)    
 Streamlit
